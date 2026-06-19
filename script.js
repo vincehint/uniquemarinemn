@@ -18,6 +18,11 @@ let inactivityTimer;
 
 window.addEventListener("load", () => {
     size = images[0].clientWidth;
+    //force a recalc after images fully render
+    setTimeout(() => {
+        size = images[0].clientWidth;
+        slide.style.transform = `translateX(${-size * counter}px)`;
+    }, 100);
 });
 
 menuButtons.forEach(btn => {
