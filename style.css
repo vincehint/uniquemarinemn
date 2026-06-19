@@ -49,8 +49,8 @@ body{
     overflow: hidden;
     border: 2px solid #ccc;
     border-radius: 10px;
-    touch-action: pan-y; /* allow vertical scrolling on touch devices */
-}
+    touch-action: none;
+    }
 
 .carousel-slide {
     display: flex;
