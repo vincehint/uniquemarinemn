@@ -65,12 +65,12 @@ modal.addEventListener("click", (e) => {
 
 //touch start
 
-slide.addEventListener("touchstart", (e) => {
+carousel.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
 });
 
 //touch end')
-slide.addEventListener("touchend", (e) => {
+carousel.addEventListener("touchend", (e) => {
     endX = e.changedTouches[0].clientX;
     handleSwipe();
 });
