@@ -31,7 +31,10 @@ menuButtons.forEach(btn => {
 
 nextBtn.addEventListener('click', () => {
     size = images[0].clientWidth; // recalc just in case
-    if (counter >= images.length - 2) return;
+    if (counter >= images.length - 1) {
+        counter = images.length - 1;
+        return;
+    }
     counter++;
     slide.style.transform = `translateX(${-size * counter}px)`;
 });
