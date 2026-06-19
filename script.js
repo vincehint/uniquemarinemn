@@ -99,3 +99,9 @@ document.addEventListener("touchstart", resetInactivityTimer);
 
 //Start timer on load
 resetInactivityTimer();
+
+function resetToFirstSlide() {
+    counter = 0;
+    size = images[0].clientWidth; // recalc just in case
+    slide.style.transform = `translateX(0px)`;
+}
