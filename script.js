@@ -65,12 +65,12 @@ modal.addEventListener("click", (e) => {
 
 //touch start
 
-carousel.addEventListener("touchstart", (e) => {
+slide.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
 });
 
 //touch end')
-carousel.addEventListener("touchend", (e) => {
+slide.addEventListener("touchend", (e) => {
     endX = e.changedTouches[0].clientX;
     handleSwipe();
 });
@@ -79,11 +79,11 @@ function handleSwipe() {
     const swipeDistance = endX - startX;
 //swipe right -> previous slide
     if (swipeDistance > 50) {
-        prevSlide();
+        prevBtn.click();
     }
 //swipe left -> next slide
     if (swipeDistance < -50) {
-        nextSlide();
+        nextBtn.click();
     }
 }
 
