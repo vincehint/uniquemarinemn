@@ -35,12 +35,14 @@ menuButtons.forEach(btn => {
 });
 
 nextBtn.addEventListener('click', () => {
-    size = images[0].clientWidth; // recalc just in case
-    if (counter >= images.length - 1) return;
-    counter++;
-    if (counter > images.length - 1) {
-        counter = images.length - 1;
+    size = images[0].clientWidth;
+
+    if (counter === images.length - 1) {
+        counter = 0; // wrap to first slide
+    } else {
+        counter++;
     }
+
     slide.style.transform = `translateX(${-size * counter}px)`;
 });
 
