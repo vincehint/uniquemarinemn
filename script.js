@@ -33,6 +33,9 @@ nextBtn.addEventListener('click', () => {
     size = images[0].clientWidth; // recalc just in case
     if (counter >= images.length - 1) return;
     counter++;
+    if (counter > images.length - 1) {
+        counter = images.length - 1;
+    }
     slide.style.transform = `translateX(${-size * counter}px)`;
 });
 
