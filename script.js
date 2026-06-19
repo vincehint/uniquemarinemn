@@ -88,13 +88,27 @@ carousel.addEventListener("touchend", (e) => {
 
 function handleSwipe() {
     const swipeDistance = endX - startX;
-//swipe right -> previous slide
+
+    // swipe right -> previous slide
     if (swipeDistance > 50) {
-        prevBtn.click();
+        if (counter === 0) {
+            counter = images.length - 1; // wrap to last slide
+        } else {
+            counter--;
+        }
+        size = images[0].clientWidth;
+        slide.style.transform = `translateX(${-size * counter}px)`;
     }
-//swipe left -> next slide
+
+    // swipe left -> next slide
     if (swipeDistance < -50) {
-        nextBtn.click();
+        if (counter === images.length - 1) {
+            counter = 0; // wrap to first slide
+        } else {
+            counter++;
+        }
+        size = images[0].clientWidth;
+        slide.style.transform = `translateX(${-size * counter}px)`;
     }
 }
 
