@@ -14,6 +14,7 @@ let size;
 let startX = 0;
 let endX = 0;
 let inactivityTimer;
+let autoAdvanceInterval;
 
 
 window.addEventListener("load", () => {
@@ -114,8 +115,43 @@ function handleSwipe() {
     }
 }
 
+slide.addEventListener("transitionend", () => {
+    if (counter === images.length) {
+        slide.style.transition = "none";
+        counter = 0;
+        size = images[0].clientWidth;
+        slide.style.transform = `translateX(${-size * counter}px)`;
+        setTimeout(() => {
+            slide.style.transition = "transform 0.5s ease-in-out";
+        }, 20);
+    }
+
+    if (counter === -1) {
+        slide.style.transition = "none";
+        counter = images.length - 1;
+        size = images[0].clientWidth;
+        slide.style.transform = `translateX(${-size * counter}px)`;
+        setTimeout(() => {
+            slide.style.transition = "transform 0.5s ease-in-out";
+        }, 20);
+    }
+});
+
+function startAutoAdvance() {
+    stopAutoAdvance(); // prevent duplicates
+
+    autoAdvanceInterval = setInterval(() => {
+        nextBtn.click(); // use your existing wrap logic
+    }, 5000); // 5 seconds per slide
+}
+
+function stopAutoAdvance() {
+    clearInterval(autoAdvanceInterval);
+}
+
 //Reset timer on any interaction
 function resetInactivityTimer() {
+    stopAutoAdvance(); // stop auto-advance on interaction
     clearTimeout(inactivityTimer);
     inactivityTimer = setTimeout(resetToFirstSlide, resetTime);
 }
@@ -131,4 +167,6 @@ function resetToFirstSlide() {
     counter = 0;
     size = images[0].clientWidth; // recalc just in case
     slide.style.transform = `translateX(0px)`;
+
+    startAutoAdvance(); // start auto-advance after reset
 }

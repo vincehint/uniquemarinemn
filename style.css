@@ -1,10 +1,61 @@
 *{ box-sizing: border-box; }
 body{
-    background-color: #031b20;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: url('waterripples.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+    z-index: 0;
+    animation: waterMove 40s linear infinite;
 }   
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1; /* Ensure the shimmer is above the background but below content */
+    filter: blur(1px) brightness(1.1);
+    mix-blend-mode: soft-light;
+    /* Soft white shimmer overlay */
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(255,255,255,0.6) 0%,
+        rgba(255,255,255,0.25) 40%,
+        rgba(255,255,255,0.1) 70%,
+        rgba(255,255,255,0) 100%
+    );
+    
+    animation: shimmer 18s ease-in-out infinite alternate;
+    waveDistort 12s ease-in-out infinite;
+    will-change: transform, opacity; /* Optimize for animation */
+    transform: scale(3);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+
+    background: radial-gradient(
+        circle at 70% 70%,
+        rgba(255,255,255,0.25) 0%,
+        rgba(255,255,255,0.05) 60%,
+        rgba(255,255,255,0) 100%
+    );
+
+    animation: shimmer2 28s ease-in-out infinite alternate;
+    will-change: transform, opacity;
+}
+
+body * {
+    position: relative;
+    z-index: 2; /* Ensure all content is above the shimmer overlay */
+}
 
 
 .carousel-wrapper {
@@ -23,12 +74,42 @@ body{
   gap: 10px;
 }
 
+.carousel-slide {
+    transition: transform 0.5s cubic-bezier(.25,.46,.45,.94);
+}
+
 .carousel-menu button {
-  padding: 10px 15px;
+  padding: 12px 22px;
   cursor: pointer;
-  border: 1px solid #145ea3;
-  background: #ffffff;
-  border-radius: 5px;
+  border: 1px solid #0dd2d9;
+  background: #111;
+  color: #0dd2d9;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  font-family: 'Poppins', sans-serif;
+  color: #e7ddddbb;
+  transform: scale(1);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+
+}
+
+.carousel-menu button:hover {
+    background: linear-gradient(135deg, #eceeee, #075d63); /* slight color shift */
+    color: #111;
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+.carousel-menu button:active {
+    transform: scale(0.96); /* soft squish */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #cceef0, #12a4d9); /* maintain hover color on click */
 }
 
  .carousel-btn {
@@ -39,9 +120,10 @@ body{
     color: rgb(15, 10, 10);
     border: none;
     padding: 10px;
-    cursor: pointer;
-}   
-    .carousel-container {
+    cursor: pointer;    
+}
+
+.carousel-container {
     width: 100%;
     max-width: 1000px;
     height: 600px;
@@ -50,7 +132,7 @@ body{
     border: 2px solid #ccc;
     border-radius: 10px;
     touch-action: none;
-    }
+}
 
 .carousel-slide {
     display: flex;
@@ -67,8 +149,18 @@ body{
 
 h1 {
     text-align: center;
-    margin: 20px 0;
-    color: rgb(241, 241, 241);
+    margin: 20px auto;
+    font-size: 54px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 15px 50px;
+    border-radius: 12px;
+    border: 2px solid #012c2e;
+    background: linear-gradient(135deg, #07525f, #79d1d4);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    font-family: 'Montserrat', sans-serif;
 }
 
 .modal {
@@ -108,3 +200,39 @@ h1 {
     #nextBtn {
         right: 10px;
     }
+
+@keyframes shimmer {
+    0% {
+        transform: translate(-40%, -40%) scale(3);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translate(40%, 20%) scale(3.2);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(-20%, 30%) scale(3);
+        opacity: 0.4;
+    }
+}
+
+@keyframes shimmer2 {
+    0%   { transform: translate(20%, -20%) scale(2.8); opacity: 0.25; }
+    50%  { transform: translate(-30%, 30%) scale(3); opacity: 0.45; }
+    100% { transform: translate(10%, -10%) scale(2.8); opacity: 0.25; }
+}
+
+@keyframes waterMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes waveDistort {
+    0%   { transform: translate(-2%, -2%) scale(1.02); }
+    50%  { transform: translate(2%, 2%) scale(1.03); }
+    100% { transform: translate(-2%, 1%) scale(1.02); }
+}
