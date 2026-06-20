@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Marine Upcoming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Coming Soon!</h1>
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img src="qllayout.jpg" alt="VRB layout" class="carousel-image">
+            <img src="qlfeatures.jpg" alt="VRB specs" class="carousel-image">
+            <img src="vrblayout.jpg" alt="rf layout" class="carousel-image">
+            <img src="vrbfeatures.jpg" alt="rf specs" class="carousel-image">
+            <img src="cruiselayout.jpg" alt="QL layout" class="carousel-image">
+            <img src="cruisefeatures.jpg" alt="ql specs" class="carousel-image">
+            <img src="RFlayout.jpg" alt="cruise layout" class="carousel-image">
+            <img src="rffeatures.jpg" alt="cruise specs" class="carousel-image">
+        </div>
+        <button id="prevBtn" class="carousel-btn">Prev</button>
+        <button id="nextBtn" class="carousel-btn">Next</button>
+    </div>
+    <script src="script.js"></script>
+<p></p>
+</body>
+</html>

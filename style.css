@@ -8,7 +8,7 @@ body{
     position: relative;
     overflow-x: hidden;
     z-index: 0;
-    animation: waterMove 40s ease-in-out infinite alternate;
+    animation: waterMove 40s linear infinite alternate;
 }   
 
 body::before {
@@ -28,7 +28,7 @@ body::before {
         rgba(255,255,255,0) 100%
     );
     
-    animation: shimmer 18s ease-in-out infinite alternate;
+    animation: shimmer 18s ease-in-out infinite alternate,
                waveDistort 12s ease-in-out infinite;
     will-change: transform, opacity; /* Optimize for animation */
     transform: scale(3);
@@ -227,7 +227,7 @@ h1 {
         background-position: 0% 0%;
     }
     100% {
-        background-position: 100% 0%;
+        background-position: 30% 5%;
     }
 }
 
