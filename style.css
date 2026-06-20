@@ -29,7 +29,7 @@ body::before {
     );
     
     animation: shimmer 18s ease-in-out infinite alternate;
-    animation: waveDistort 12s ease-in-out infinite;
+               waveDistort 12s ease-in-out infinite;
     will-change: transform, opacity; /* Optimize for animation */
     transform: scale(3);
 }
