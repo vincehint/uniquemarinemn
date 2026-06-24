@@ -239,7 +239,7 @@ h1 {
 
 @keyframes waterDrift {
     0%   { background-position: 0% 0%; }
-    100% { background-position: 100% 50%; }
+    100% { background-position: 180% 120%; }
 }
 
 .water-layer {
@@ -255,7 +255,7 @@ h1 {
     inset: 0;
     z-index: -1;
     background: url('high-detail-water.jpg') repeat;
-    background-size: 200% 200%;
-    opacity: 0.15; /* subtle */
+    background-size: 300% 300%;
+    opacity: 0.25; /* subtle */
     animation: waterDrift 60s linear infinite;
 }
