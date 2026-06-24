@@ -1,6 +1,6 @@
 *{ box-sizing: border-box; }
 body{
-    background: #000;
+    background: transparent;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 20px;
@@ -14,14 +14,14 @@ body::before {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 0; /* Ensure the shimmer is above the background but below content */
-    filter: blur(1px) brightness(1.1);
-    mix-blend-mode: soft-light;
+    z-index: -3; /* Ensure the shimmer is above the background but below content */
+    filter: blur(1px);
+    mix-blend-mode: overlay;
     /* Soft white shimmer overlay */
     background: radial-gradient(
         circle at 50% 50%,
-        rgba(255,255,255,0.6) 0%,
-        rgba(255,255,255,0.25) 40%,
+        rgba(255,255,255,0.25) 0%,
+        rgba(255,255,255,0.10) 40%,
         rgba(255,255,255,0.1) 70%,
         rgba(255,255,255,0) 100%
     );
@@ -37,7 +37,7 @@ body::after {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 0;
+    z-index: -4;
     background: radial-gradient(
         circle at 70% 70%,
         rgba(255,255,255,0.25) 0%,
@@ -235,23 +235,23 @@ h1 {
 
 @keyframes waterDrift {
     0%   { background-position: 0% 0%; }
-    100% { background-position: 30% 15%; }
+    100% { background-position: 12% 6%; }
 }
 
 .water-layer {
     position: fixed;
     inset: 0;
     z-index: -2;
-    background: url('waterripples.jpeg');
+    background: url('waterripples.jpg');
     background-size: cover;
 }
 .water-motion {
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: url('ripplewater.jpeg') no-repeat center center;
-    background-size: 200% 200%;
-    opacity: 0.14; /* subtle */
+    background: url('waterripples.jpg') no-repeat center center;
+    background-size: 115% 115%;
+    opacity: 0.10; /* subtle */
     mix-blend-mode: soft-light;
-    animation: waterDrift 55s linear infinite;
+    animation: waterDrift 65s linear infinite;
 }
