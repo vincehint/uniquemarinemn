@@ -237,6 +237,11 @@ h1 {
     100% { transform: translate(-2%, 1%) scale(1.02); }
 }
 
+@keyframes waterDrift {
+    0%   { background-position: 0% 0%; }
+    100% { background-position: 100% 50%; }
+}
+
 .water-layer {
     position: fixed;
     inset: 0;
@@ -244,4 +249,13 @@ h1 {
     background: url('waterripples.jpg');
     background-size: 150% 150%;
     animation: waterMove 60s linear infinite alternate;
+}
+.water-motion {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: url('high-detail-water.jpg') repeat;
+    background-size: 200% 200%;
+    opacity: 0.15; /* subtle */
+    animation: waterDrift 60s linear infinite;
 }
