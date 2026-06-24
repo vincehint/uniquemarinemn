@@ -9,40 +9,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Coming Soon!</h1>
-    <div class="carousel-wrapper">
-        <div class="carousel-container">
-            <div class="carousel-slide">
-                <img src="qllayout.jpg" alt="VRB layout" class="carousel-image" data-zoom="QLSeating.jpeg">
-                <img src="qlfeatures.jpg" alt="VRB specs" class="carousel-image" data-zoom="QLSeating.jpeg">
-                <img src="vrblayout.jpg" alt="rf layout" class="carousel-image" data-zoom="RFSeating.jpeg">
-                <img src="vrbfeatures.jpg" alt="rf specs" class="carousel-image" data-zoom="RFSeating.jpeg">
-                <img src="cruiselayout.jpg" alt="QL layout" class="carousel-image" data-zoom="QLSeating.jpeg">
-                <img src="cruisefeatures.jpg" alt="ql specs" class="carousel-image" data-zoom="QLSeating.jpeg">
-                <img src="RFlayout.jpg" alt="cruise layout" class="carousel-image" data-zoom="RFSeating.jpeg">
-                <img src="rffeatures.jpg" alt="cruise specs" class="carousel-image" data-zoom="RFSeating.jpeg">
+    <div class=""water-layer"></div>
+    <div class="content">
+        <h1>Coming Soon!</h1>
+        <div class="carousel-wrapper">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="qllayout.jpg" alt="VRB layout" class="carousel-image" data-zoom="QLSeating.jpeg">
+                    <img src="qlfeatures.jpg" alt="VRB specs" class="carousel-image" data-zoom="QLSeating.jpeg">
+                    <img src="vrblayout.jpg" alt="rf layout" class="carousel-image" data-zoom="RFSeating.jpeg">
+                    <img src="vrbfeatures.jpg" alt="rf specs" class="carousel-image" data-zoom="RFSeating.jpeg">
+                    <img src="cruiselayout.jpg" alt="QL layout" class="carousel-image" data-zoom="QLSeating.jpeg">
+                    <img src="cruisefeatures.jpg" alt="ql specs" class="carousel-image" data-zoom="QLSeating.jpeg">
+                    <img src="RFlayout.jpg" alt="cruise layout" class="carousel-image" data-zoom="RFSeating.jpeg">
+                    <img src="rffeatures.jpg" alt="cruise specs" class="carousel-image" data-zoom="RFSeating.jpeg">
+                </div>
             </div>
+            <div class="carousel-menu">
+                <button data-slide="0">QL Layout</button>
+                <button data-slide="1">QL Features</button>
+                <button data-slide="2">VRB Layout</button>
+                <button data-slide="3">VRB Features</button>
+                <button data-slide="4">Cruise Layout</button>
+                <button data-slide="5">Cruise Features</button>
+                <button data-slide="6">RF Layout</button>
+                <button data-slide="7">RF Features</button>
+            </div>    
         </div>
-        <div class="carousel-menu">
-            <button data-slide="0">QL Layout</button>
-            <button data-slide="1">QL Features</button>
-            <button data-slide="2">VRB Layout</button>
-            <button data-slide="3">VRB Features</button>
-            <button data-slide="4">Cruise Layout</button>
-            <button data-slide="5">Cruise Features</button>
-            <button data-slide="6">RF Layout</button>
-            <button data-slide="7">RF Features</button>
-        </div>    
-    </div>
-   
     
-    <button id="prevBtn" class="carousel-btn">Prev</button>
-    <button id="nextBtn" class="carousel-btn">Next</button>
-    
-    <div id="layoutModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
+        
+        <button id="prevBtn" class="carousel-btn">Prev</button>
+        <button id="nextBtn" class="carousel-btn">Next</button>
+        
+        <div id="layoutModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
     </div>
+
    
 
     <script src="script.js?v=10"></script>
