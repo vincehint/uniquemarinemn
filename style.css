@@ -235,7 +235,7 @@ h1 {
 
 @keyframes waterDrift {
     0%   { background-position: 0% 0%; }
-    100% { background-position: 300% 180%; }
+    100% { background-position: 30% 15%; }
 }
 
 .water-layer {
@@ -249,9 +249,9 @@ h1 {
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: url('ripplewater.jpeg') repeat;
-    background-size: 420% 420%;
-    opacity: 0.28; /* subtle */
+    background: url('ripplewater.jpeg') no-repeat center center;
+    background-size: 200% 200%;
+    opacity: 0.14; /* subtle */
     mix-blend-mode: soft-light;
-    animation: waterDrift 38s linear infinite;
+    animation: waterDrift 55s linear infinite;
 }
