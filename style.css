@@ -1,14 +1,12 @@
 *{ box-sizing: border-box; }
 body{
-    background: url('waterripples.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: #000;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 20px;
     position: relative;
     overflow-x: hidden;
     z-index: 0;
-    animation: waterMove 40s linear infinite alternate;
 }   
 
 body::before {
@@ -239,23 +237,23 @@ h1 {
 
 @keyframes waterDrift {
     0%   { background-position: 0% 0%; }
-    100% { background-position: 180% 120%; }
+    100% { background-position: 260% 160%; }
 }
 
 .water-layer {
     position: fixed;
     inset: 0;
-    z-index: -1;
-    background: url('waterripples.jpg');
-    background-size: 150% 150%;
-    animation: waterMove 60s linear infinite alternate;
+    z-index: -2;
+    background: url('waterripples.jpeg');
+    background-size: cover;
 }
 .water-motion {
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: url('high-detail-water.jpg') repeat;
-    background-size: 300% 300%;
-    opacity: 0.25; /* subtle */
-    animation: waterDrift 60s linear infinite;
+    background: url('ripplewater.jpeg') repeat;
+    background-size: 350% 350%;
+    opacity: 0.22; /* subtle */
+    mix-blend-mode: soft-light;
+    animation: waterDrift 45s linear infinite;
 }
