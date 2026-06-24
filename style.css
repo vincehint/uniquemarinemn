@@ -14,7 +14,7 @@ body::before {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 1; /* Ensure the shimmer is above the background but below content */
+    z-index: 0; /* Ensure the shimmer is above the background but below content */
     filter: blur(1px) brightness(1.1);
     mix-blend-mode: soft-light;
     /* Soft white shimmer overlay */
@@ -37,15 +37,13 @@ body::after {
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 1;
-
+    z-index: 0;
     background: radial-gradient(
         circle at 70% 70%,
         rgba(255,255,255,0.25) 0%,
         rgba(255,255,255,0.05) 60%,
         rgba(255,255,255,0) 100%
     );
-
     animation: shimmer2 28s ease-in-out infinite alternate;
     will-change: transform, opacity;
 }
@@ -237,7 +235,7 @@ h1 {
 
 @keyframes waterDrift {
     0%   { background-position: 0% 0%; }
-    100% { background-position: 260% 160%; }
+    100% { background-position: 300% 180%; }
 }
 
 .water-layer {
@@ -252,8 +250,8 @@ h1 {
     inset: 0;
     z-index: -1;
     background: url('ripplewater.jpeg') repeat;
-    background-size: 350% 350%;
-    opacity: 0.22; /* subtle */
+    background-size: 420% 420%;
+    opacity: 0.28; /* subtle */
     mix-blend-mode: soft-light;
-    animation: waterDrift 45s linear infinite;
+    animation: waterDrift 38s linear infinite;
 }
