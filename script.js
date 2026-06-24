@@ -170,3 +170,4 @@ function resetToFirstSlide() {
 
     startAutoAdvance(); // start auto-advance after reset
 }
+

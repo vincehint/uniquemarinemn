@@ -227,7 +227,7 @@ h1 {
         background-position: 0% 0%;
     }
     100% {
-        background-position: 30% 5%;
+        background-position: 45% 10%;
     }
 }
 
@@ -236,3 +236,4 @@ h1 {
     50%  { transform: translate(2%, 2%) scale(1.03); }
     100% { transform: translate(-2%, 1%) scale(1.02); }
 }
+
