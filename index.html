@@ -36,7 +36,16 @@
                 <button data-slide="5">Cruise Features</button>
                 <button data-slide="6">RF Layout</button>
                 <button data-slide="7">RF Features</button>
-            </div>    
+            </div> 
+            <div class="video-buttons">
+                <button onclick="openVideo('https://www.youtube.com/embed/videoseries?list=PL4voBAuTjr8zZaMLJ5kD1gnv4T68SJ6Of')">
+                    Check Out The Avalon Lineup
+                </button>
+
+                <button onclick="openVideo('https://www.youtube.com/embed/videoseries?list=PLCkOnvIgiaSLzZ3en58ovTqslxPwz9Mx4')">
+                    Check Out The Premier Lineup
+                </button>
+            </div>
         </div>
     
         
@@ -46,6 +55,11 @@
         <div id="layoutModal" class="modal">
             <span class="close">&times;</span>
             <img class="modal-content" id="modalImage">
+        </div>
+
+        <div id="videoModal" class="modal">
+            <span class="close" onclick="closeVideo()">&times;</span>
+            <iframe id="videoFrame" class="modal-content" allowfullscreen></iframe>
         </div>
     </div>
 

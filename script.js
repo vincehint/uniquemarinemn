@@ -171,3 +171,18 @@ function resetToFirstSlide() {
     startAutoAdvance(); // start auto-advance after reset
 }
 
+function openVideo(url) {
+    const modal = document.getElementById("videoModal");
+    const frame = document.getElementById("videoFrame");
+
+    frame.src = url + "&autoplay=1";
+    modal.style.display = "block";
+}
+
+function closeVideo() {
+    const modal = document.getElementById("videoModal");
+    const frame = document.getElementById("videoFrame");
+
+    frame.src = ""; // stops playback
+    modal.style.display = "none";
+}
