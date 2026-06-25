@@ -284,7 +284,7 @@ h1 {
     inset: 0;
     z-index: -4;
     background: url('waterripples.png') center center / 160% 160% no-repeat;
-    animation: waterSway 40s ease-in-out infinite;
+    animation: waterSway 30s ease-in-out infinite;
     mask-image: radial-gradient(circle, black 65%, transparent 100%);
     -webkit-mask-image: radial-gradient(circle, black 65%, transparent 100%);
 }
@@ -294,7 +294,7 @@ h1 {
     inset: 0;
     z-index: -3;
     background: url('waterripples.png') center center / 160% 160% no-repeat;
-    animation: waterSwayReverse 55s ease-in-out infinite;
+    animation: waterSwayReverse 40s ease-in-out infinite;
     mix-blend-mode: normal;
     mask-image: radial-gradient(circle, black 65%, transparent 100%);
     -webkit-mask-image: radial-gradient(circle, black 65%, transparent 100%);
@@ -313,14 +313,14 @@ h1 {
     .water-layer {
         background-size: 200% 200%;
         background-repeat: repeat;
-        animation: waterDrift 65s linear infinite;
+        animation: waterDrift 45s linear infinite;
 
     }
 
     .water-motion {
         background-size: 120% 120%;
         /* IMPORTANT: animation must be preserved */
-        animation: waterShift 55s linear infinite;
+        animation: waterShift 40s linear infinite;
     }
 }
 
