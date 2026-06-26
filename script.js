@@ -141,8 +141,20 @@ function startAutoAdvance() {
     stopAutoAdvance(); // prevent duplicates
 
     autoAdvanceInterval = setInterval(() => {
-        nextBtn.click(); // use your existing wrap logic
-    }, 5000); // 5 seconds per slide
+        goToNextSlide(); // no click event, no timer reset
+    }, 5000);
+}
+
+function goToNextSlide() {
+    size = images[0].clientWidth;
+
+    if (counter === images.length - 1) {
+        counter = 0;
+    } else {
+        counter++;
+    }
+
+    slide.style.transform = `translateX(${-size * counter}px)`;
 }
 
 function stopAutoAdvance() {
